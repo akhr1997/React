@@ -1,4 +1,9 @@
 /**
+ * npm - install node package
+ * npx - execute node package
+ */
+
+/**
  * creating element in React takes in 3
  * HTML element,
  * object of attributes like class, id
@@ -16,9 +21,13 @@ React.creatElement("div", {id: "first-div"}, "Hello")
 
 const root = react.creatRoot(document.getElementById("root"))
 
-
 /**
  * render - renders parent inside root
  */
 
 root.render(parent)
+
+/**
+ * start parcel
+ */
+// npx parcel index.html

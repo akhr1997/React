@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 //hello world from JavaScript
 const root = document.getElementById("root");
 const newH1 = document.createElement("h1");
