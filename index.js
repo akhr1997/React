@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 //creating element using vanilla JavaScript
 const root = document.getElementById("root");
 const newH1 = document.createElement("h1");
-newH1.innerHTML = "Hello from JS";
+newH1.innerHTML = "Hello from JS. Haha!";
 root.appendChild(newH1);
 
 //creating element using React
