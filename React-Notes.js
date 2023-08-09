@@ -58,6 +58,7 @@ root.render(parent)
 
 /**
  * COMPONENTS
+ * Component is a normal javascript function which returns a JSX or a div
  * Class Based
  * Functional Based  - Always starts with capital letter
  * Component Composisition - using one component inside another. Just call the oher component like <.../> inside the other 

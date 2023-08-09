@@ -1,48 +1,71 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-//creating element using vanilla JavaScript
-const root = document.getElementById("root");
-const newH1 = document.createElement("h1");
-newH1.innerHTML = "Hello from JS. Haha!!";
-root.appendChild(newH1);
 
-//creating element using React
-const heading = React.createElement("h1", {}, "Hello from react");
-const root2 = ReactDOM.createRoot(document.getElementById("root2"));
-root2.render(heading);
-
-//create multiple nested elemets using React
-const parent = React.createElement("div", { id: "parent" },
-    React.createElement("div", { id: "child" },
-        [
-            React.createElement("h1", {}, "H1 from multiple"),
-            React.createElement("h1", {}, "Second H1 from nested react elemets")
-        ]
-    )
-);
-
-const root3 = ReactDOM.createRoot(document.getElementById("root3"))
-root3.render(parent);
-
-//creating elements using JSX
-const headingUsingJSX = <h1 id="headingUsingJSX">H1 from JSX</h1>;
-const root4 = ReactDOM.createRoot(document.getElementById("root4"));
-root4.render(headingUsingJSX);
-
-//Basic React Functional Component
-const HeadingComponent = () => {
-    return <h1>H1 from 1st React Functional Component</h1>
+const Header = () => {
+    return (
+        <div className="header">
+            <div className="logo-container">
+                <img
+                    className="logo"
+                    src="https://image.similarpng.com/very-thumbnail/2021/09/Good-food-logo-design-on-transparent-background-PNG.png" alt="logo" />
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Menu</li>
+                </ul>
+            </div>
+        </div>
+    )
 }
 
-//Above function can be cut to this. Omit return and the {}
-//Component Composition - use 1 Component inside another
-const HeadingComponentInShort = () => (
-    <div>
-        <HeadingComponent/>
-        <h1 className="heading">H1 from 2nd React Functional Component </h1>
-    </div>
-)
+const Footer = () =>{
+    return(
+        <div className="footer">
+            <h3>CopyRights @ Ashwin</h3>
+        </div>
+    )
+}
 
-const root5 = ReactDOM.createRoot(document.getElementById("root5"));
-root5.render(<HeadingComponentInShort/>);
+const Body = () => {
+    return(
+        <div className="body">
+            <div className="search">search</div>
+            <div className="res-container">
+                <RestrauntCard resName="McD" cuisine="Burger"/>
+                <RestrauntCard resName="KFC" cuisine="Burger"/>
+            </div>
+        </div>
+    )
+}
+
+const RestrauntCard = (props) =>{
+    return(
+        <div className="res-card">
+            <img className="res-logo" alt="res-logo" src="https://images.ctfassets.net/h7j9u4fil4a3/6QYctK1Upul0Bu90PfIYq0/1bdf2c5f7cecfb61c0d1afae7b9dd668/Ultimate_BBQ_Fried_Chicken_Sandwich_.jpg?w=1200&h=667&fl=progressive&q=50&fm=jpg"/>
+            <h3>{props.resName}</h3>
+            <h4>{props.cuisine}</h4>
+            <h4>⭐️⭐️⭐️⭐️</h4>
+            <h4>34 minutes</h4>
+        </div>
+    )
+}
+
+const AppLayout = () => {
+    return (
+        <div className="app">
+            <Header/>
+            <Body/>
+            <Footer/>
+        </div>
+    )
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+
+root.render(<AppLayout/>)
