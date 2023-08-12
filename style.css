@@ -42,8 +42,12 @@ body{
     cursor: pointer;
 }
 
-.search{
-    padding: 10px;
+.filter-btn{
+    margin: 10px;
+}
+
+.filter-btn:hover{
+    cursor: pointer;
 }
 
 .res-logo{

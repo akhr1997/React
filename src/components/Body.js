@@ -1,18 +1,33 @@
-import RestrauntCard from "./RestrauntCard";
-import RESTLIST from "../utils/mockData";
+import RestaurantCard from "./RestaurantCard";
+import { useState } from "react";
+import resList from "../utils/mockData";
 
 const Body = () => {
-    return (
-      <div className="body">
-        <div className="search">search</div>
-        <div className="res-container">
-          {RESTLIST.map((restraunt) => (
-            <RestrauntCard key={restraunt.id} resData={restraunt} />
-          ))}
-          {/* <RestrauntCard resData={resList[0]}/> */}
-        </div>
-      </div>
-    );
-  };
+  // Local State Variable - Super powerful variable
+  const [listOfRestaurants, setListOfRestraunt] = useState(resList);
 
-  export default Body;
+  return (
+    <div className="body">
+      <div className="filter">
+        <button
+          className="filter-btn"
+          onClick={() => {
+            const filteredList = listOfRestaurants.filter(
+              (res) => res.data.avgRating > 4
+            );
+            setListOfRestraunt(filteredList);
+          }}
+        >
+          Top Rated Restaurants
+        </button>
+      </div>
+      <div className="res-container">
+        {listOfRestaurants.map((restaurant) => (
+          <RestaurantCard key={restaurant.data.id} resData={restaurant} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Body;

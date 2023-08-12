@@ -12,20 +12,20 @@
  *      we can use [] to add 2 elemts in the same level.
  */
 
-React.creatElement("div", {id: "first-div"}, "Hello")
+React.creatElement("div", { id: "first-div" }, "Hello");
 
 /**
  * creating root
  * assiging "root" from DOM as React root
  */
 
-const root = React.creatRoot(document.getElementById("root"))
+const root = React.creatRoot(document.getElementById("root"));
 
 /**
  * render - renders parent inside root
  */
 
-root.render(parent)
+root.render(parent);
 
 /**
  * start parcel
@@ -61,5 +61,34 @@ root.render(parent)
  * Component is a normal javascript function which returns a JSX or a div
  * Class Based
  * Functional Based  - Always starts with capital letter
- * Component Composisition - using one component inside another. Just call the oher component like <.../> inside the other 
+ * Component Composisition - using one component inside another. Just call the oher component like <.../> inside the other
+ */
+
+/**
+ * Imports of are 2 types
+ * 1. Named
+ *      - exported in the variable creation line as  - export const blah
+ *      - imported as - import { blah } from ../../ fileName
+ * 2. default
+ *      - exported as - export default blah at the end of component file.
+ *      - imported as - import blah from ../../fileName
+ */
+
+/**
+ * Hooks - Normal JS Functions
+ * 1. useState
+ *      - creates super powerful react state variables.
+ *      - imported as named import using { useState } from "react"
+ *      const [varName] = useState(initialize value)
+ * As soon as the state varibale changes, react rerenders the component in optimised way and very less code
+ * Keeps data kayer in sync with the UI Layer
+ * 2. useEffect
+ */
+
+/**
+ * WHY IS REACT SO FAST? -  efficient DOM manipulation and crazy fast rerenders
+ *1. Virtaul DOM
+ *      - Copy of the DOM in the form of an Object
+ *2. DIFF ALGORITHM. REACT FIBER, RECONCILIATION ALGORITHM
+ *      - check sthe difference between old virtual DOM and new virtual DOM after state change and changed the UI
  */
