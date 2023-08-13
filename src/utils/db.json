@@ -1,0 +1,11 @@
+{
+  "restaurant": [
+    {
+      "name": "KFC",
+      "cuisines": "Burger",
+      "avgRating": 4,
+      "costForTwo": 500,
+      "deliveryTime": 36
+    }
+  ]
+}

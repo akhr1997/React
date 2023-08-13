@@ -1,10 +1,43 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import resList from "../utils/mockData";
 
 const Body = () => {
   // Local State Variable - Super powerful variable
   const [listOfRestaurants, setListOfRestraunt] = useState(resList);
+
+  // {
+  //   data: {
+  //     name: "KFC",
+  //     cuisines: "Burger",
+  //     avgRating: 4,
+  //     costForTwo: 500,
+  //     deliveryTime: 36,
+  //   },
+  // },
+  // {
+  //   data: {
+  //     name: "KFC",
+  //     cuisines: "Burger",
+  //     avgRating: 4,
+  //     costForTwo: 500,
+  //     deliveryTime: 36,
+  //   },
+  // },
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, [])
+
+  // fetchData = () =>{
+  //   const data = fetch("");
+  //   const json = data.json();
+  //   setListOfRestraunt(json.data.data......)
+  // }
+
+  if (listOfRestaurants.length === 0) {
+    return <h1>Loadinggggggg...</h1>;
+  }
 
   return (
     <div className="body">

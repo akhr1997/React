@@ -92,3 +92,16 @@ root.render(parent);
  *2. DIFF ALGORITHM. REACT FIBER, RECONCILIATION ALGORITHM
  *      - check sthe difference between old virtual DOM and new virtual DOM after state change and changed the UI
  */
+
+/**
+ * BEST ARCHITECTURE FOR REACT
+ * LOAD PAGE -> RENDER -> CALL API -> RE-RENDER COMPONENT WITH NEW DATA FROM THE API
+ */
+
+/**
+ * useEffect()
+ * Is a JS function
+ * It is called after the component is rendered
+ * Secong arg is a dependent array[]
+ *
+ */
