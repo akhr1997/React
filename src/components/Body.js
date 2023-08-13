@@ -7,6 +7,8 @@ const Body = () => {
   // Local State Variable - Super powerful variable
   const [listOfRestaurants, setListOfRestraunt] = useState(resList);
 
+  const [searchText, setSearchText] = useState("");
+
   // {
   //   data: {
   //     name: "KFC",
@@ -43,6 +45,27 @@ const Body = () => {
   return (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+            placeholder="Search..."
+          />
+          <button
+            onClick={() => {
+              const searchedRestro = listOfRestaurants.filter((res) =>
+                res.data.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setListOfRestraunt(searchedRestro);
+            }}
+          >
+            Go!
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
